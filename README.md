@@ -25,7 +25,7 @@ In this example, the following is the intended outcome:
 1. DO_SET_SERVO sets servo 4 to 1450μs (a mid-range engine RPM in the example case)
 2. DELAY briefly for the engine to spool
 3. DO_JUMP - **special case:** instead of setting parameter 1 as usual for a DO_JUMP command, parameter 4 is set to 1. This is a directive to the macro processor to insert existing on-screen waypoints up to and including this one, and then resume adding the macro template commands. In this case, we add waypoint 1 and then move on.
-4. DO_SET_RELAY turns the mower deck PTO on after reaching waypoint 1
+4. DO_SET_RELAY turns on relay 2 (mower deck PTO) after reaching waypoint 1
 5. DELAY waits for PTO engagement
 6. DO_SET_SERVO sets servo 4 to mowing engine speed
 7. DELAY waits briefly for the engine to spool
@@ -37,6 +37,6 @@ In this example, the following is the intended outcome:
 Save this mission to a file. Then clear it and plan waypoints as usual. When finished, right click the map and select "Add Macro." Choose the file you saved previously. The commands will be added in the order specified.
 
 To simplify the example in plain English:
-Set mid-range RPM for travel to waypoint 1. Upon reaching waypoint 1, turn on the mower deck and increase engine RPM for mowing. Continue mowing. Upon reaching the last waypoint, turn off the mower deck and set engine idle.
+Set mid-range RPM (servo 4) for travel to waypoint 1. Upon reaching waypoint 1, turn on the mower deck (relay 2) and increase engine RPM for mowing. Continue mowing. Upon reaching the last waypoint, turn off the mower deck and set engine idle.
 
 The same type of strategy can be used for any number of vehicle types and could ease the planning burden for anything from automated agricultural mowing/spraying/etc to aerial survey with a canned route to/from an area of interest to fixed wing recovery using the same traffic pattern, and so on.
